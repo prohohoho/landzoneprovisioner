@@ -1,0 +1,6 @@
+sql:
+  - name: "sqlserver"
+    administrator_username: "admini"
+    vcores: 4
+    storage_size: 32
+    sku_name: "GP_Gen5"

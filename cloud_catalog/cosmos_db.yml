@@ -1,0 +1,6 @@
+cosmos_db:
+  - name: maria-srv
+    throughput: 400
+    database:
+    - name: test
+    - name: test12

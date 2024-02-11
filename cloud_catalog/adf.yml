@@ -1,0 +1,11 @@
+adf:
+  - name: data1
+    subnet_id: controlled
+    self_hosted_integration_runtime:
+      - name: test
+      - name: test1
+  - name: web2
+    subnet_id: controlled
+    self_hosted_integration_runtime:
+      - name: test
+      - name: test1

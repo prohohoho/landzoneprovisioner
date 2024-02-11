@@ -1,0 +1,6 @@
+azure_firewall:
+  - resource_group_name: product
+    sku_name: AZFW_VNet
+    sku_tier: Standard
+    vnet_name: main
+    subnet_name: controlled

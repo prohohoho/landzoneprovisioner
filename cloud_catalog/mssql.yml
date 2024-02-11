@@ -1,0 +1,7 @@
+mssql:
+  - sql_server_name: mssql-srv
+    backup_retention_days: 7
+    administator_username: admintest #admin is not allowed
+    database:
+    - name: mssql_db1
+    - name: mssql_db2

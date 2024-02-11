@@ -1,0 +1,15 @@
+# Dictionary of Windows VMs with names and networks attached to them
+# Any of the vm_defaults parameters can be assigned within the machine list as well, overriding the defaults (see examples below)
+
+akv_config:
+  akv_defaults:
+    soft_delete_retention_days: 7
+    purge_protection_enabled: false
+    sku_name: standard
+    enabled_for_disk_encryption: true
+    vnet_name         : vnet-main
+  list:
+    -   shortname: akv01
+        soft_delete_retention_days: 7
+        sku_name: standard
+        subnet_id: controlled

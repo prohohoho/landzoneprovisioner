@@ -1,0 +1,169 @@
+
+
+networks:
+- name: main
+  address_space: [10.0.0.0/16]
+  resource_group: baseline
+  subnets:
+  - name: controlled
+    address_prefixes: [10.0.1.0/24]
+    rules:
+    - name: "Allow HTTPS outbound"
+      priority: 100
+      direction: "Outbound"
+      access: "Allow"
+      protocol: "Tcp"
+      source_port_range: "443"
+      source_port_ranges: 
+      destination_port_range: "443"
+      destination_port_ranges:
+      source_address_prefix: "*"
+      source_address_prefixes:
+      destination_address_prefix: "*"
+      destination_address_prefixes:
+    - name: "Allow HTTPS inbound"
+      priority: 100
+      direction: "Inbound"
+      access: "Allow"
+      protocol: "Tcp"
+      source_port_range: "443"
+      source_port_ranges: 
+      destination_port_range: "443"
+      destination_port_ranges:
+      source_address_prefix: "*"
+      source_address_prefixes:
+      destination_address_prefix: "*"
+      destination_address_prefixes: 
+    - name: "Allow SSH inbound"
+      priority: 110
+      direction: "Inbound"
+      access: "Allow"
+      protocol: "Tcp"
+      source_port_range: "22"
+      source_port_ranges: 
+      destination_port_range: "22"
+      destination_port_ranges:
+      source_address_prefix: "*"
+      source_address_prefixes:
+      destination_address_prefix: "*"
+      destination_address_prefixes:
+    - name: "Allow SSH outbound"
+      priority: 110
+      direction: "Outbound"
+      access: "Allow"
+      protocol: "Tcp"
+      source_port_range: "22"
+      source_port_ranges: 
+      destination_port_range: "22"
+      destination_port_ranges:
+      source_address_prefix: "*"
+      source_address_prefixes:
+      destination_address_prefix: "*"
+      destination_address_prefixes:
+    - name: "Allow RDP inbound"
+      priority: 120
+      direction: "Inbound"
+      access: "Allow"
+      protocol: "Tcp"
+      source_port_range: "3389"
+      source_port_ranges: 
+      destination_port_range: "3389"
+      destination_port_ranges:
+      source_address_prefix: "*"
+      source_address_prefixes:
+      destination_address_prefix: "*"
+      destination_address_prefixes:
+    - name: "Allow RDP outbound"
+      priority: 120
+      direction: "Outbound"
+      access: "Allow"
+      protocol: "Tcp"
+      source_port_range: "3389"
+      source_port_ranges: 
+      destination_port_range: "3389"
+      destination_port_ranges:
+      source_address_prefix: "*"
+      source_address_prefixes:
+      destination_address_prefix: "*"
+      destination_address_prefixes:          
+  - name: secured
+    address_prefixes: [10.0.2.0/24]
+    rules:
+    - name: "Allow HTTPS outbound"
+      priority: 100
+      direction: "Outbound"
+      access: "Allow"
+      protocol: "Tcp"
+      source_port_range: "443"
+      source_port_ranges: 
+      destination_port_range: "443"
+      destination_port_ranges:
+      source_address_prefix: "*"
+      source_address_prefixes:
+      destination_address_prefix: "*"
+      destination_address_prefixes:
+    - name: "Allow HTTPS inbound"
+      priority: 100
+      direction: "Inbound"
+      access: "Allow"
+      protocol: "Tcp"
+      source_port_range: "443"
+      source_port_ranges: 
+      destination_port_range: "443"
+      destination_port_ranges:
+      source_address_prefix: "*"
+      source_address_prefixes:
+      destination_address_prefix: "*"
+      destination_address_prefixes:
+    - name: "Allow SSH inbound"
+      priority: 110
+      direction: "Inbound"
+      access: "Allow"
+      protocol: "Tcp"
+      source_port_range: "22"
+      source_port_ranges: 
+      destination_port_range: "22"
+      destination_port_ranges:
+      source_address_prefix: "*"
+      source_address_prefixes:
+      destination_address_prefix: "*"
+      destination_address_prefixes:
+    - name: "Allow SSH outbound"
+      priority: 110
+      direction: "Outbound"
+      access: "Allow"
+      protocol: "Tcp"
+      source_port_range: "22"
+      source_port_ranges: 
+      destination_port_range: "22"
+      destination_port_ranges:
+      source_address_prefix: "*"
+      source_address_prefixes:
+      destination_address_prefix: "*"
+      destination_address_prefixes:
+    - name: "Allow RDP inbound"
+      priority: 120
+      direction: "Inbound"
+      access: "Allow"
+      protocol: "Tcp"
+      source_port_range: "3389"
+      source_port_ranges: 
+      destination_port_range: "3389"
+      destination_port_ranges:
+      source_address_prefix: "*"
+      source_address_prefixes:
+      destination_address_prefix: "*"
+      destination_address_prefixes:
+    - name: "Allow RDP outbound"
+      priority: 120
+      direction: "Outbound"
+      access: "Allow"
+      protocol: "Tcp"
+      source_port_range: "3389"
+      source_port_ranges: 
+      destination_port_range: "3389"
+      destination_port_ranges:
+      source_address_prefix: "*"
+      source_address_prefixes:
+      destination_address_prefix: "*"
+      destination_address_prefixes:

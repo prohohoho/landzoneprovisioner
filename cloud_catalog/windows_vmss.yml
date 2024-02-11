@@ -1,0 +1,8 @@
+windows_vmss_config:
+- name: web01
+  subnet_id: controlled
+  image_sku: 2016-Datacenter-Server-Core
+  instance_number: 2
+  disk_size_gb: 256
+  storage_account_type: StandardSSD_LRS
+  vmss_sku: Standard_F2

@@ -1,0 +1,5 @@
+acr:
+  - name: app
+    subnet_id: controlled
+  - name: web 
+    subnet_id: controlled

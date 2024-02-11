@@ -1,0 +1,4 @@
+resource_group:
+  list:
+    - name: product
+    - name: baseline

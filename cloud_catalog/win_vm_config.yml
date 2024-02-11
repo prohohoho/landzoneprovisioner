@@ -1,0 +1,44 @@
+vm_config:
+  win_vm_defaults:  # Required
+    size                : Standard_D2as_v4
+    image_publisher     : MicrosoftWindowsServer
+    image_offer         : WindowsServer
+    image_sku           : 2016-Datacenter
+    image_version       : latest
+    admin_username      : vmadmin
+    admin_password      : random  # "random" for random value
+    timezone            : New Zealand Standard Time
+    storage_account_type: Premium_LRS
+  list:
+    - name          : dc01    
+      size          : standard_b2ms
+      subnet        : secured 
+      os_disk_size  : 127
+      os_hostname   : vm04                  # Required (CAF naming convention in this case makes the vm name length > 16 characters, therefore the need for shorter hostname requirement)
+      image_publisher : MicrosoftWindowsServer
+      image_offer     : WindowsServer
+      image_sku       : 2022-Datacenter
+      admin_username  : ops
+      image_version   : latest  # Optional that overrides the default
+      managed_disks :                       # Block is optional, but all parameters are required if block has items in it
+        - name                : disk1
+          disk_size_gb        : 64
+          create_option       : Empty
+          lun                 : 1
+          caching             : ReadWrite
+    - name          : dc02    
+      size          : standard_b2ms
+      subnet        : secured 
+      os_disk_size  : 127
+      os_hostname   : vm05                  # Required (CAF naming convention in this case makes the vm name length > 16 characters, therefore the need for shorter hostname requirement)
+      image_publisher : MicrosoftWindowsServer
+      image_offer     : WindowsServer
+      image_sku       : 2022-Datacenter
+      admin_username  : ops
+      image_version   : latest  # Optional that overrides the default
+      managed_disks :                       # Block is optional, but all parameters are required if block has items in it
+        - name                : disk1
+          disk_size_gb        : 64
+          create_option       : Empty
+          lun                 : 1
+          caching             : ReadWrite

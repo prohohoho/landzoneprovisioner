@@ -1,0 +1,10 @@
+linux_vmss_config:
+- name: web02
+  subnet_id: controlled
+  publisher: Canonical
+  offer: UbuntuServer
+  image_sku: 16.04-LTS
+  instance_number: 2
+  disk_size_gb: 256
+  storage_account_type: StandardSSD_LRS
+  vmss_sku: Standard_F2

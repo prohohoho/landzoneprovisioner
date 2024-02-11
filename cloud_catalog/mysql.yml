@@ -1,0 +1,8 @@
+mysql:
+  - name: maria-srv
+    sku: GP_Gen5_2
+    storage_mb: 5120
+    subnet_id: controlled
+    database:
+    - name: maria_db3
+    - name: maria_db4
